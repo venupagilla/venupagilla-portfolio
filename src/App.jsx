@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About, Contact, Experience, Education, Skills, Events, Achievements, Patents, Hero, Navbar, Works, StarsCanvas, AllProjects } from './components';
+import React, { useState, useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { About, Contact, Experience, Education, Skills, Events, Achievements, Patents, Hero, Navbar, Works, StarsCanvas, AllProjects, Preloader } from './components';
 
 const HomePage = () => {
   return (
@@ -23,9 +25,22 @@ const HomePage = () => {
 }
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading time for 3D assets to prepare
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2 second preloader
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <BrowserRouter basename="/venupagilla-portfolio">
       <div className="relative z-0 bg-primary">
+        <Toaster position="top-center" reverseOrder={false} />
+        {loading && <Preloader />}
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -13,6 +13,28 @@
   color-scheme: dark;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+  /* matching primary dark bg */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #915EFF;
+  /* matching primary violet brand color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa6c3;
+  /* secondary color */
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

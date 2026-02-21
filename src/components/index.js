@@ -13,6 +13,7 @@ import Events from './Events';
 import Achievements from './Achievements';
 import Patents from './Patents';
 import AllProjects from './AllProjects';
+import Preloader from './Preloader';
 
 export {
   Hero,
@@ -29,6 +30,7 @@ export {
   Achievements,
   Patents,
   AllProjects,
+  Preloader,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,

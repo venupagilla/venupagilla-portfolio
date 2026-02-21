@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
@@ -8,6 +8,28 @@ import { logo, menu, close } from '../assets';
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (id, title) => {
+    setActive(title);
+    setToggle(false);
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}>
@@ -26,9 +48,9 @@ const Navbar = () => {
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((link) => (
             <li key={link.id} className={`${active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-poniter`}
-              onClick={() => setActive(link.title)}>
-              <a href={`#${link.id}`}>{link.title}</a>
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => handleNavClick(link.id, link.title)}>
+              {link.title}
             </li>
           ))}
         </ul>
@@ -41,11 +63,8 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li key={link.id} className={`${active === link.title ? "text-white" : "text-secondary"
                   } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(link.title);
-                  }}>
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  onClick={() => handleNavClick(link.id, link.title)}>
+                  {link.title}
                 </li>
               ))}
             </ul>

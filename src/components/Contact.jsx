@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
@@ -43,17 +44,17 @@ const Contact = () => {
     )
       .then(() => {
         setLoading(false);
-        alert('Thank you. I will get back to you as soon as possible.');
+        toast.success('Message sent successfully! I will get back to you soon.');
         setForm({
           name: '',
           email: '',
           message: ''
-        }, (error) => {
-          setLoading(false);
-          console.log(error);
-          alert('Something went wrong!');
         });
-      })
+      }, (error) => {
+        setLoading(false);
+        console.log(error);
+        toast.error('Something went wrong. Please try again.');
+      });
   };
 
   return (
@@ -98,7 +99,7 @@ const Contact = () => {
           <button
             type='submit'
             className='bg-tertiary py-3 px-8 outline-none w-fit text-white
-                    font-bold shadow-md shadow-primary rounded-xl'
+                    font-bold shadow-md shadow-primary rounded-xl hover:bg-black-200 hover:scale-105 transition-all'
           >
             {loading ? 'Sending..' : "Send"}
           </button>

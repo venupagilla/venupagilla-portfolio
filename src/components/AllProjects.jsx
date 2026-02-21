@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../constants';
 import { styles } from '../styles';
@@ -7,6 +7,10 @@ import { fadeInw, textVariantw } from '../utils/motion';
 
 const AllProjects = () => {
     const [selectedProject, setSelectedProject] = useState(projects[0]);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="w-full flex-col md:flex-row flex min-h-screen bg-primary pt-[80px]">

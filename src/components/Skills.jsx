@@ -16,8 +16,8 @@ const SkillCategoryCard = ({ index, category, items }) => {
                 <p className='text-white font-black text-[24px] mb-4'>{category}</p>
                 <div className='mt-2 flex flex-wrap gap-2'>
                     {items.map((skill, idx) => (
-                        <div key={idx} className="bg-tertiary px-3 py-1 rounded-full border border-secondary">
-                            <p className="text-secondary text-[14px]">{skill}</p>
+                        <div key={idx} className="bg-tertiary px-3 py-1 rounded-full border border-secondary hover:scale-110 hover:border-white hover:shadow-card transition-all cursor-default">
+                            <p className="text-secondary hover:text-white transition-colors text-[14px]">{skill}</p>
                         </div>
                     ))}
                 </div>
