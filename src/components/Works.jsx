@@ -1,5 +1,6 @@
 import { Tilt } from "react-tilt"
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { styles } from '../styles';
 import { github } from '../assets';
 import { SectionWrapper } from '../hoc';
@@ -9,7 +10,7 @@ import { fadeInw, textVariantw } from '../utils/motion';
 const ProjectCard = ({ index, name, description, tags, image, source_code_link, live_demo_link, deployed }) => {
   return (
     <motion.div variants={fadeInw("up", "spring",
-      index * 0.5, 0.75)} onClick={() => window.open(live_demo_link, "_blank")}>
+      index * 0.5, 0.75)} onClick={() => window.open(live_demo_link, "_blank")} className="w-full h-full flex flex-col">
       <Tilt
         options={{
           max: 45,
@@ -17,8 +18,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           speed: 450
         }}
         className="bg-tertiary p-5 rounded-2xl
-                  sm:w-[360px] w-full cursor-pointer">
-        <div className="relative w-full h-[230px]">
+                  sm:w-[360px] w-full h-full cursor-pointer flex flex-col">
+        <div className="relative w-full h-[230px] shrink-0">
           {image ? (
             <img src={image}
               alt={name}
@@ -40,7 +41,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 flex-grow">
           <div className="flex items-center gap-3">
             <h3 className="text-white font-bold text-[24px]">{name}</h3>
             {deployed && (
@@ -53,7 +54,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           <p className="mt-2 text-secondary text-[12px]">{description}</p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 shrink-0">
           {tags.map((tag) => (
             <p key={tag.name} className={`text-[10px] ${tag.color}`}>
               #{tag.name}
@@ -66,6 +67,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
 }
 
 const Works = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <motion.div variants={textVariantw()}>
@@ -85,9 +88,9 @@ const Works = () => {
       </div>
 
       <div className="mt-20 scrolling-wrapper">
-        <div className="scrolling-container">
+        <div className="scrolling-container items-stretch">
           {[...projects, ...projects].map((project, index) => (
-            <div key={`project-${index}`} className="w-[300px] sm:w-[360px] flex-shrink-0">
+            <div key={`project-${index}`} className="w-[300px] sm:w-[360px] flex-shrink-0 h-auto flex flex-col">
               <ProjectCard
                 index={index % projects.length}
                 {...project}
@@ -95,6 +98,15 @@ const Works = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="mt-10 flex justify-center">
+        <button
+          onClick={() => navigate('/projects')}
+          className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-black-200 transition-colors"
+        >
+          View All Projects
+        </button>
       </div>
     </>
   )

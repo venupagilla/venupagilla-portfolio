@@ -12,6 +12,7 @@ import Skills from './Skills';
 import Events from './Events';
 import Achievements from './Achievements';
 import Patents from './Patents';
+import AllProjects from './AllProjects';
 
 export {
   Hero,
@@ -27,6 +28,7 @@ export {
   Events,
   Achievements,
   Patents,
+  AllProjects,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,
