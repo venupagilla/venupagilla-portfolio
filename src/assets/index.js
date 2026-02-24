@@ -47,10 +47,11 @@ import quizme from './quizme.png';
 import cneh from './cneh.png';
 import mipp from './mipp.png';
 import iots from './iots.png';
+import marketEasy from './MarketEasy.png';
 
 import vnrvjiet from './company/vnrvjiet.jpeg';
 import gioe from './company/gioe.jpg';
-  
+
 
 export {
   logo,
@@ -99,6 +100,7 @@ export {
   cneh,
   mipp,
   iots,
+  marketEasy,
   vnrvjiet,
   gioe
 };

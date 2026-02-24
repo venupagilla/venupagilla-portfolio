@@ -13,16 +13,16 @@ const AllProjects = () => {
     }, []);
 
     return (
-        <div className="w-full flex-col md:flex-row flex min-h-screen bg-primary pt-[80px]">
+        <div className="w-full flex-col md:flex-row flex h-[calc(100vh-80px)] mt-[80px] bg-primary overflow-hidden">
 
             {/* Left fixed panel */}
-            <div className="md:w-[40%] w-full md:h-[calc(100vh-80px)] md:sticky top-[80px] p-4 sm:p-8 border-b md:border-b-0 md:border-r border-secondary/20 flex flex-col justify-start bg-black-100/50 overflow-hidden">
+            <div className="md:w-[40%] w-full md:h-full p-4 sm:p-8 border-b md:border-b-0 md:border-r border-secondary/20 flex flex-col bg-black-100/50 overflow-hidden shrink-0">
                 <motion.div
                     key={selectedProject.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex flex-col h-full w-full"
+                    className="flex flex-col h-full w-full min-h-0"
                 >
                     <div className="relative w-full h-[200px] sm:h-[300px] rounded-2xl overflow-hidden shadow-card mb-4 shrink-0">
                         {selectedProject.image ? (
@@ -65,7 +65,7 @@ const AllProjects = () => {
                         ))}
                     </div>
 
-                    <p className="text-secondary text-[13px] sm:text-[14px] leading-relaxed flex-grow overflow-hidden text-ellipsis custom-scrollbar">
+                    <p className="text-secondary text-[13px] sm:text-[14px] leading-relaxed flex-grow overflow-y-auto min-h-0 custom-scrollbar">
                         {selectedProject.description}
                     </p>
 
@@ -89,7 +89,7 @@ const AllProjects = () => {
             </div>
 
             {/* Right scrolling panel */}
-            <div className="md:w-[60%] w-full p-4 sm:p-8 overflow-y-auto">
+            <div className="md:w-[60%] w-full h-full p-4 sm:p-8 overflow-y-auto">
                 <motion.div variants={textVariantw()}>
                     <p className={`${styles.sectionSubText} text-center md:text-left`}>Explore my work</p>
                     <h2 className={`${styles.sectionHeadText} text-center md:text-left mb-10`}>All Projects.</h2>

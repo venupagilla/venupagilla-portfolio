@@ -25,6 +25,7 @@ import {
   cneh,
   mipp,
   iots,
+  marketEasy,
 
   vnrvjiet,
   gioe
@@ -129,6 +130,20 @@ const experiences = [
 const testimonials = [];
 
 const projects = [
+  {
+    name: "MarketEasy",
+    description:
+      "AI-powered marketing assistant for founders — generates pitch decks, LinkedIn campaigns, and Instagram content via real-time voice/text chat. Built with a FastAPI backend (OpenAI, speech recognition) and a Next.js/React frontend featuring glass-morphism UI and Framer Motion micro-animations.",
+    tags: [
+      { name: "next.js", color: "blue-text-gradient" },
+      { name: "fastapi", color: "green-text-gradient" },
+      { name: "openai", color: "pink-text-gradient" }
+    ],
+    image: marketEasy,
+    source_code_link: "https://github.com/venupagilla/Perpetual-Enigma",
+    live_demo_link: "https://market-easy-frontend.vercel.app/",
+    deployed: true
+  },
   {
     name: "StudySpire",
     description:
