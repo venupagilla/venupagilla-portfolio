@@ -40,7 +40,7 @@ const Contact = () => {
         to_email: 'pagillavenu909@gmail.com',
         message: form.message,
       },
-      'GLHRCt8xhi51kGhkH'
+      'jbzqg3piFqzbjdVkg'
     )
       .then(() => {
         setLoading(false);
