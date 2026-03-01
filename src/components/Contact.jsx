@@ -32,11 +32,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs.send('service_f3tsefp', 'template_orw6get',
+    emailjs.send('service_4vu6tnh', 'template_jc8h9bt',
       {
-        from_name: form.name,
+        name: form.name,
         to_name: 'Venu',
-        from_email: form.email,
+        email: form.email,
         to_email: 'pagillavenu909@gmail.com',
         message: form.message,
       },
