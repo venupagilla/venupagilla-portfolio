@@ -15,9 +15,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>I build AI-powered and <br className='sm:block hidden' />full-stack applications.</p>
           <div className='mt-8 flex flex-row gap-4'>
             <a
-              href="https://drive.google.com/file/d/1ACshQ3XoctoXP-7XcRgl5ClS4BYKhv2w/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://drive.google.com/uc?export=download&id=1ACshQ3XoctoXP-7XcRgl5ClS4BYKhv2w"
               className='bg-tertiary border border-secondary/30 hover:border-[#915eff] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary hover:bg-black-200 hover:scale-105 transition-all flex items-center gap-2 cursor-pointer relative z-10'
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#915eff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
