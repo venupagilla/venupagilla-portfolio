@@ -154,7 +154,7 @@ const projects = [
       { name: "supabase", color: "pink-text-gradient" }
     ],
     image: studyspired,
-    source_code_link: "https://study-spire.vercel.app/",
+    source_code_link: "https://github.com/venupagilla/StudySpire",
     live_demo_link: "https://study-spire.vercel.app/",
     deployed: true
   },
