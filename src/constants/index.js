@@ -28,6 +28,7 @@ import {
   marketEasy,
 
   vnrvjiet,
+  ethos,
   gioe
 } from "../assets";
 
@@ -130,6 +131,30 @@ const experiences = [
 const testimonials = [];
 
 const projects = [
+    {
+      name: "Ethos: Autonomous Multi-Agent System for Project Planning & Resource Allocation",
+      description:
+        "Ethos is an autonomous multi-agent project management platform that turns a raw project idea into decomposed tasks, optimized team assignments, risk insights, and generated documentation (SRS/DRD). It uses orchestrated AI agents to handle planning, skill-gap analysis, workload balancing, and report generation, with RAG support for querying past project outputs.",
+      tags: [
+        { name: "python", color: "blue-text-gradient" },
+        { name: "fastapi", color: "green-text-gradient" },
+        { name: "langchain", color: "pink-text-gradient" },
+        { name: "langgraph", color: "blue-text-gradient" },
+        { name: "groq", color: "green-text-gradient" },
+        { name: "chromadb", color: "pink-text-gradient" },
+        { name: "sqlite", color: "blue-text-gradient" },
+        { name: "next.js", color: "green-text-gradient" },
+        { name: "react", color: "pink-text-gradient" },
+        { name: "tailwindcss", color: "blue-text-gradient" },
+        { name: "framer-motion", color: "green-text-gradient" },
+        { name: "typescript", color: "pink-text-gradient" },
+        { name: "postcss", color: "blue-text-gradient" }
+      ],
+      image: ethos,
+      source_code_link: "https://github.com/venupagilla/Ethos-Multi-agent-project-planning",
+      // No live_demo_link provided
+      deployed: false
+    },
   {
     name: "MarketEasy",
     description:
@@ -255,7 +280,7 @@ const skills = [
   },
   {
     category: "AI/ML",
-    items: ["Torch", "Scikit-learn", "NLP", "GenAI APIs"]
+    items: ["Torch", "Scikit-learn", "NLP", "GenAI APIs", "LangChain", "LangGraph", "CrewAI"]
   },
   {
     category: "Databases",

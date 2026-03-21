@@ -49,6 +49,8 @@ import mipp from './mipp.png';
 import iots from './iots.png';
 import marketEasy from './MarketEasy.png';
 
+
+import ethos from './tech/ethos.png';
 import vnrvjiet from './company/vnrvjiet.jpeg';
 import gioe from './company/gioe.jpg';
 
@@ -102,5 +104,6 @@ export {
   iots,
   marketEasy,
   vnrvjiet,
+  ethos,
   gioe
 };
