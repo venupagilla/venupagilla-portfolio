@@ -29,6 +29,7 @@ import {
 
   vnrvjiet,
   ethos,
+  researchAnalyzer,
   gioe
 } from "../assets";
 
@@ -131,6 +132,22 @@ const experiences = [
 const testimonials = [];
 
 const projects = [
+  {
+    name: "Autonomous Research Paper Analyzer V2",
+    description:
+      "A multi-agent AI system powered by CrewAI that autonomously searches, ranks, and analyzes research papers on any topic. It combines a Python backend (with intelligent AI agents) with a React + Vite frontend, enabling users to extract insights from academic papers efficiently and generate comprehensive research briefs.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "crewai", color: "green-text-gradient" },
+      { name: "fastapi", color: "pink-text-gradient" },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "vite", color: "green-text-gradient" },
+      { name: "uv", color: "pink-text-gradient" }
+    ],
+    image: researchAnalyzer,
+    source_code_link: "https://github.com/venupagilla/Autonomous-Research-Paper-Analyzer",
+    deployed: false
+  },
     {
       name: "Ethos: Autonomous Multi-Agent System for Project Planning & Resource Allocation",
       description:
